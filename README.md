@@ -1,2 +1,2 @@
-# QCM-Bob
-Game in C++ and SDL2
+# QCM_bob
+QCM in C++ and SDL2
