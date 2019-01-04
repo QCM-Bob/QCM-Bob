@@ -2,7 +2,7 @@
 #include"Formulation.h"
 
 
-class Question: public Formulation {
+class Question: public Formulation{
 
 public:
 	Question(){_num_question=0;};

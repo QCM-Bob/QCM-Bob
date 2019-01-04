@@ -1,4 +1,4 @@
-#include "Window.hpp"
+#include "Window.hh"
 
 Window::Window():_win(NULL),_renderer(NULL),_img(NULL),_l(935),_h(520),_screen_name("BOB GAME "),_PATH("./IMAGE/Acceuil.jpg"){} // constructeur par défaut
 
