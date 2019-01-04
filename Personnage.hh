@@ -5,7 +5,7 @@ class Personnage{
 	Personnage ();
 	Personnage(std :: string name )
 	~Personnage(){};
+	void choisir_personnage(int &a); 
  private:
-	uint16_t _nrj;
 	int _score;
 }
