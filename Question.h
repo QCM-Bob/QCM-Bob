@@ -5,17 +5,13 @@
 class Question: public Formulation {
 
 public:
-	Question(std::string question, std::string r1, std::string r2, std::string r3, int vraie_rep);
+	Question(){};
 	 ~Question(){};
-	
-	 std::string get_question() {return _question;}
-	 
-	 void affiche_SDL() const;
-	 void askQuestion();
+	 int get_num_question(){return _num_question;} // numéro de la question posée
+	 void init();
 
 
 
 protected:
-	std::string _question;
-	int _vraie_rep;
+	int _num_question;
 };

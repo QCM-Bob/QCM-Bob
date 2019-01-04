@@ -1,34 +1,37 @@
 #include "Question.h"
-using namespace std;
+#include <fstream>
+#include <string>
 
 
 
-	Question::Question(std::string question, std::string r1, std::string r2, std::string r3,int vraie_rep): Formulation(), _question(question),_vraie_rep(vraie_rep)
+
+/*	Question::Question():Formulation()
 	{
-		_reponses.push_back(r1);
-		_reponses.push_back(r2);
-		_reponses.push_back(r3);
-
+		//_num_question=0;
 	};
-
- void Question::affiche_SDL() const
- {};
-
- void Question::askQuestion(){
-
- 	int choix;
-	cout<<get_question()<<endl;
-	std::vector<string> v=get_reponses();
-	for (int i=0; i<v.size(); i++)
-		cout<< i << ") " <<v[i]<<endl;
-
-	cout<<endl;
-	cout<<"Rentrez le numéro de la bonne réponse"<<endl;
-	cin>>choix;
-	if(choix==_vraie_rep)
-		cout<<"Bien joué"<<endl;
-	else cout<<"Et non! La bonne réponse était la "<<_vraie_rep<<endl;
+*/
 
 
+void Question::init()
+{
 
- };
+ 	std::ifstream fichier( "questions.txt" );
+ 	std::string ligne;
+ 	
+ 	 if ( fichier ) // ce test échoue si le fichier n'est pas ouvert
+    {
+         // variable contenant chaque ligne lue
+
+        // cette boucle s'arrête dès qu'une erreur de lecture survient
+        while ( std::getline( fichier, ligne ) )
+        {
+            // afficher la ligne à l'écran
+            std::cout << ligne << std::endl;
+            set_liste(ligne);
+           
+        }
+    } 
+    else std::cout<<"Le fichier questions.txt n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
+}; 
+
+ 
