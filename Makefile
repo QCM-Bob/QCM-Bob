@@ -1,22 +1,23 @@
-CC=g++ -g
-CCFLAGS= -Wall -Werror -std=c++11
-LIBFLAGS= -lSDL2 -lSDL2_image
-SRC= $(wildcard *.cpp)
-OBJ= $(SRC:.cpp=.o)
-EXEC= main
+CFLAGS = -Wall -g -std=c++11
+CC = g++
+OBJECTS = main.o Question.o Reponse.o 
+EXEC = main
 
-all: $(EXEC)
+all: $(EXEC) 
 
-$(EXEC): $(OBJ)
-		$(CC) $^ -o $@	$(LIBFLAGS)
+
+$(EXEC): $(OBJECTS)
+	$(CC) -o $@ $^ $(CFLAGS)
+
+
+%.o: %.cc
+	$(CC) $^ -c $(CFLAGS)
 
 %.o: %.cpp
-		$(CC) $(CCFLAGS) -o $@ -c $<
+	$(CC) $^ -c $(CFLAGS)
 
-.depends:
-		g++ -MM $(SRC) > .depends
-
--include .depends
 
 clean:
-		rm -f $(OBJ) $(EXEC)
+	rm -f $(OBJECTS) $(EXEC)
+
+.PHONY: all clean
