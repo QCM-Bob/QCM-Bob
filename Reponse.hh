@@ -14,7 +14,7 @@ public:
 	 ~Reponse(){};
 	 void init();
 	 std::string get_rep(Question q);
-
+	 
 
 
 protected:
