@@ -4,14 +4,6 @@
 
 
 
-
-/*	Question::Question():Formulation()
-	{
-		//_num_question=0;
-	};
-*/
-
-
 void Question::init()
 {
 
@@ -25,13 +17,13 @@ void Question::init()
         // cette boucle s'arrête dès qu'une erreur de lecture survient
         while ( std::getline( fichier, ligne ) )
         {
-            // afficher la ligne à l'écran
-            std::cout << ligne << std::endl;
+ 
             set_liste(ligne);
            
         }
     } 
     else std::cout<<"Le fichier questions.txt n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
+    
 }; 
 
  
