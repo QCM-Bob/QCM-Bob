@@ -5,6 +5,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+<<<<<<< HEAD
 	cout << "------------------------- JEU QUIZZ---------------------------"<<endl;
 	cout<<endl;
 	cout<<"     Bienvenue au jeu programmé par Soum et Esra"<<endl;
@@ -20,6 +21,8 @@ int main(int argc, char const *argv[])
 	Question q3("De quelle forme sont les nuages ?", "En forme de fleur", "En forme d'étoile", "En forme de nuage tout simplement",0);
 	Question q4("De quelle couleur est la cravate de Bob ?", "Rouge", "Bleue", "Verte",0);
 
+=======
+>>>>>>> d444c3c8579315439a72558454ed6101cd24cc41
 
 	q1.askQuestion();
 	q2.askQuestion();
