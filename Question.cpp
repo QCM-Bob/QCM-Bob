@@ -23,7 +23,12 @@ void Question::init()
         }
     } 
     else std::cout<<"Le fichier questions.txt n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
-    
+
 }; 
 
  
+ int Question::set_num_question()
+ {
+ 	_num_question++;
+ 	return(_num_question);
+ };
