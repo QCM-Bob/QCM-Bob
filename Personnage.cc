@@ -5,20 +5,19 @@ using namespace std;
 
 
 
-//Personnage::Personnage(std :: string name){};
-//Personnage :: ~Personnage(){};
+Personnage::Personnage(std :: string name){};
+Personnage :: ~Personnage(){};
 
-/*std::string Personnage::get_name() const
+std::string Personnage::get_name() const
 {
 	return _name;
-} */
-
-// Liste d'initialisation c++11:
-//std::list<std::string> perso_possibles{"./IMAGE/Move_Carlos.jpg","./IMAGE/Move_Patrick.jpg", "./IMAGE/bob.jpg" };
+} 
 
 
 void Personnage ::choisir_personnage(std :: string choix_perso)
 {
+
+	//Prendre en compte l'image de fond en argument pour charger l'image dessus ?? ou pas besoin ! 
 
 	std:: map< std::string , std::string> a;
 	//map< std::string ,std:: string> a;
@@ -28,7 +27,6 @@ void Personnage ::choisir_personnage(std :: string choix_perso)
 	a["./IMAGE/Move_Patrick.jpg"] = "Patrick";
 
 
-	//enum cas_possible(std :: string a, b ,c );
 	/*std:: map< string , string> l;
 	std :: Map<String, String> l = new HashMap<String, String>();
     l.put("Bob", "./IMAGE/bob.jpg");
