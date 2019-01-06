@@ -21,7 +21,8 @@ void Reponse::init()
         }
     } 
     else std::cout<<"Le fichier reponses.txt n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
-
+    _affiche_res[0]="./IMAGE/Vrai.jpg";
+    _affiche_res[1]="./IMAGE/Faux.jpg";
 	
 
 };
@@ -32,3 +33,10 @@ std::string Reponse::get_rep(Question q)
 	int i=q.get_num_question();
 	return(get_liste(i));
 };
+
+bool Reponse::estlaBonneRep(std::string rep,std::string bonne_rep)
+{
+    if (rep==bonne_rep) return true;
+    return false;
+};
+

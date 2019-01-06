@@ -11,12 +11,13 @@ class Reponse: public Formulation{
 
 public:
 	Reponse(){};
-	 ~Reponse(){};
-	 void init();
-	 std::string get_rep(Question q);
-	 
-
+	~Reponse(){};
+	void init();
+	std::string get_rep(Question q);
+	std::string get_affiche_rep(int i){return _affiche_res[i];}
+	bool estlaBonneRep(std::string rep,std::string bonne_rep);
 
 protected:
+	std::string _affiche_res[2];
 
 };

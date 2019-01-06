@@ -18,7 +18,7 @@ int Affiche::Init(Window* window)
     SDL_Renderer* renderer=window->get_renderer();
     SDL_Texture* img=window->get_img();
     
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) //initialisation
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) //initialisation
         return 1;
     
     win = SDL_CreateWindow(window->get_screen_name().c_str(), 100, 100, WIDTH, HEIGHT, 0); // cree la fenetre - c.str() pour récupérer le str

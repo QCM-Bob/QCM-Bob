@@ -2,33 +2,27 @@
 #include <fstream>
 #include <string>
 
-
-
 void Question::init()
 {
 
- 	std::ifstream fichier( "questions.txt" );
+ 	std::ifstream fichier( "questions.txt" ); // chemin vers les images de questions
  	std::string ligne;
+    std::string tmp;
  	
- 	 if ( fichier ) // ce test échoue si le fichier n'est pas ouvert
+ 	 if ( fichier ) // si le fichier existe
     {
-         // variable contenant chaque ligne lue
-
-        // cette boucle s'arrête dès qu'une erreur de lecture survient
-        while ( std::getline( fichier, ligne ) )
+    
+        while ( std::getline( fichier, ligne ) ) // tant que le fichier est parcouru
         {
- 
-            set_liste(ligne);
-           
+            
+            set_liste(ligne); // on ajoute à _liste les liens vers les images
         }
     } 
     else std::cout<<"Le fichier questions.txt n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
-
-    	std::cout<<_liste.size()<<std::endl;
 }; 
 
- 
- int Question::set_num_question()
+
+ int Question::set_num_question() // cette fonction est utilisé pour l'affichage de chaque question, pour passer à la question suivante
  {
  	_num_question++;
  	return(_num_question);
