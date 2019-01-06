@@ -10,8 +10,8 @@
 #include<iostream>
 using namespace std;
 #define IMG_PATH "./IMAGE/Acceuil.jpeg"
-#define WIDTH 935
-#define HEIGHT 520
+#define WIDTH 1100
+#define HEIGHT 650
 
 
 
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
     int w=wi.get_l();
     int h=wi.get_h();
 
-  win = SDL_CreateWindow("Projet Bob L'éponge", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0); // cree la fenetre
+    win = SDL_CreateWindow("Projet Bob L'éponge", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0); // cree la fenetre
     renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED); // cree le renderer
     
     
