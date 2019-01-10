@@ -18,28 +18,63 @@ int Affiche::Init(Window* window)
     SDL_Renderer* renderer=window->get_renderer();
     SDL_Texture* img=window->get_img();
     
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) //initialisation
-        return 1;
-    
-    win = SDL_CreateWindow(window->get_screen_name().c_str(), 100, 100, WIDTH, HEIGHT, 0); // cree la fenetre - c.str() pour récupérer le str
-    renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED); // cree le renderer
 
+    // initialise video
+        std::cout << "SDL Initialisation" << std::endl;
+        if( SDL_Init( SDL_INIT_VIDEO ) < 0)
+        {
+            std::cout << "Unable to set video mode: " << SDL_GetError() << std::endl;
+            exit(-1);
+        }
     
-    img = IMG_LoadTexture(renderer,window->get_path().c_str()); // charge l'image
-    SDL_QueryTexture(img, NULL, NULL,&WIDTH, &HEIGHT); // recuperer la longueur et largeur
+    // cree la fenetre pour récupérer le str
+    win = SDL_CreateWindow(window->get_screen_name().c_str(), 100, 100, WIDTH, HEIGHT, 0); 
 
+    if( win == NULL )
+        {
+            std::cout << "Window could not be created! SDL_Error: " << SDL_GetError() << "\n" << std::endl;
+        }
+        else
+        {
+
+            //Create renderer for window
+            renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
+            if( _renderer == NULL )
+            {
+                printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
+            } else {
+                //Initialize renderer color
+                SDL_SetRenderDrawColor( _renderer, 0xFF, 0xFF, 0xFF, 0xFF );
+
+                printf( "Renderer OK \n" );
+
+
+            }
+
+        }
+    
+    // charger l'image
+    img = IMG_LoadTexture(renderer,window->get_path().c_str());
+    SDL_QueryTexture(img, NULL, NULL,&WIDTH, &HEIGHT);
+    SDL_RenderCopy(renderer, img, NULL, &position);
 
     return 0;
 }
+
+
+Affiche::~Affiche(){}
 
 void Affiche::destruction(SDL_Renderer* renderer,SDL_Window* win,SDL_Texture* img)
 {
     // pour détruire toutes les fenetres, normalement devraient être dans le déstructeur on verra ça après
     SDL_DestroyTexture(img);
     SDL_DestroyRenderer(renderer);
+    renderer =NULL ;
     SDL_DestroyWindow(win);
+    //Quit SDL subsystems
+    SDL_Quit();
 
 }
 
 
-Affiche::~Affiche(){}
+
