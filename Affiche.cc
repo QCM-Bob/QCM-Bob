@@ -56,7 +56,7 @@ int Affiche::Init(Window* window)
     // charger l'image
     img = IMG_LoadTexture(renderer,window->get_path().c_str());
     SDL_QueryTexture(img, NULL, NULL,&WIDTH, &HEIGHT);
-    SDL_RenderCopy(renderer, img, NULL, &position);
+   
 
     return 0;
 }
