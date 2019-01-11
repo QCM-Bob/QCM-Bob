@@ -1,7 +1,7 @@
 CFLAGS = -Wall -g -std=c++11
 CC = g++
-OBJECTS = main.o Question.o Reponse.o Window.o Affiche.o 
-LIBFLAGS= -lSDL2 -lSDL2_image
+OBJECTS = main.o Question.o Reponse.o Window.o Affiche.o Personnage.o Deplacement.o
+LIBFLAGS= -lSDL2 -lSDL2_image 
 EXEC = main
 
 all: $(EXEC) 
