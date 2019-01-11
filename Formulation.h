@@ -8,7 +8,7 @@ class Formulation{
 
 public:
 	Formulation(){};
-	virtual ~Formulation(){}; // delete vector
+	virtual ~Formulation(){_liste.clear();}; // delete vector
 	//virtual void affiche_SDL() const=0;
     virtual void init() = 0; // fonction virtuelle pure qui Permettra par la suite d'affecter les chemins vers les images
 	std::string get_liste(int i){return  _liste[i];}
