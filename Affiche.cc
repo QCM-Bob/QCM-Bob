@@ -64,14 +64,13 @@ int Affiche::Init(Window* window)
 
 Affiche::~Affiche(){}
 
-void Affiche::destruction(SDL_Renderer* renderer,SDL_Window* win,SDL_Texture* img)
+void Affiche::clear(SDL_Renderer* renderer,SDL_Window* win,SDL_Texture* img)
 {
-    // pour détruire toutes les fenetres, normalement devraient être dans le déstructeur on verra ça après
+    // pour détruire toutes les fenetres
     SDL_DestroyTexture(img);
     SDL_DestroyRenderer(renderer);
     renderer =NULL ;
     SDL_DestroyWindow(win);
-    //Quit SDL subsystems
     SDL_Quit();
 
 }

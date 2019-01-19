@@ -1,6 +1,6 @@
 CFLAGS = -Wall -g -std=c++11
 CC = g++
-OBJECTS = main.o Question.o Reponse.o Window.o Affiche.o Personnage.o Deplacement.o Score.o
+OBJECTS = main.o Question.o Reponse.o Window.o Affiche.o Personnage.o Deplacement.o Score.o Events.o
 LIBFLAGS= -lSDL2 -lSDL2_image 
 EXEC = main
 

@@ -3,9 +3,11 @@
 
 Personnage::Personnage()
 {
-    _persos[0] ="./IMAGE/bob.jpg";
+	_persos[0] = "./IMAGE/Move_Patrick.jpg";
     _persos[1] = "./IMAGE/Move_Carlos.jpg";
-    _persos[2] = "./IMAGE/Move_Patrick.jpg";
+    _persos[2] ="./IMAGE/bob.jpg";
+   
+   
 };
 
 //Personnage::Personnage(std :: string name){};

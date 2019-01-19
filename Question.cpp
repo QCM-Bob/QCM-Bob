@@ -9,7 +9,8 @@ void Question::init()
 {
 
 	// fichier << 
- 	std::ifstream fichier( "questions.txt" ); // chemin vers les images de questions
+ 	std::ifstream fichier(perso_question);
+    std::cout<<perso_question<<std::endl;// chemin vers les images de questions
  	std::string ligne;
     std::string tmp;
  	
@@ -22,7 +23,8 @@ void Question::init()
             set_liste(ligne); // on ajoute à _liste les liens vers les images
         }
     } 
-    else std::cout<<"Le fichier questions.txt n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
+    else std::cout<<"Le fichier  n'existe pas ou n'est pas situé dans le bon endroit, veuillez vérifier svp"<<std::endl;
+    for(int i=0; i<10;++i) std::cout<<get_liste(i)<<std::endl;
 }; 
 
 
@@ -31,3 +33,13 @@ void Question::init()
  	_num_question++;
  	return(_num_question);
  };
+
+
+void Question::operator()(int  val){
+    
+    
+        if(val==1)  perso_question="questions1.txt";
+        else if(val==2) perso_question="questions2.txt";
+        else  perso_question="questions3.txt";
+  
+};

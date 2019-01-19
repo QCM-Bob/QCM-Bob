@@ -10,8 +10,12 @@
 #include "Window.hh"
 
 /*
+ La classe Affiche permet d'afficher les fenêtres créées au fur et à mesure. Nous nous sommes inspirées des tutoriels données sur internet,
+ coder avec SDL étant un peu compliqué sans modèle au début.
+ Cette classe hérite d'Ecran.
+ Nou
  Le but de la classe Affiche qui hérite de la classe Window afin de créer les fonctions qui vont permettre l'affichage .
- Ainsi la fonction Init permet d'initialiser, affichage va afficher à l'écran la page d'accueil. 
+ On commencera avec init l'affichage de la page d'accueil.
  
  */
 
@@ -23,8 +27,8 @@ public:
     Affiche();
     Affiche(SDL_Window *win ,SDL_Renderer *renderer,SDL_Texture *img,int l,int h,const std::string screen_name, std::string PATH);
     ~Affiche();
-    int Init(Window* window); // va permettre d'initialiser la première page avec Solo, multi ou contre la montre
-    void destruction(SDL_Renderer* renderer,SDL_Window* win,SDL_Texture* img);
+    int Init(Window* window); // intialisation Page d'accueil
+    void clear(SDL_Renderer* renderer,SDL_Window* win,SDL_Texture* img);
     
 };
 
