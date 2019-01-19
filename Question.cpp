@@ -2,9 +2,13 @@
 #include <fstream>
 #include <string>
 
+
+
+
 void Question::init()
 {
 
+	// fichier << 
  	std::ifstream fichier( "questions.txt" ); // chemin vers les images de questions
  	std::string ligne;
     std::string tmp;

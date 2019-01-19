@@ -4,6 +4,7 @@
 #include"Window.hh"
 #include "Personnage.hh"
 #include "Deplacement.hh"
+#include "Score.hh"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL_image.h> //contenu dans la bibliothèque SDL2
@@ -49,6 +50,8 @@ int main(int argc, char const *argv[])
 	q.init();
 	Reponse r;
 	r.init();
+    Score s;
+
 
     int i=q.get_num_question();
     std::string bonne_rep;
@@ -118,19 +121,28 @@ int main(int argc, char const *argv[])
 
                 case SDLK_a:
                 if (r.estlaBonneRep("A",bonne_rep)) 
-                {img=IMG_LoadTexture(renderer,r.get_affiche_rep(0).c_str()); 
-                }// faire fonction void resultat()
-                else img=IMG_LoadTexture(renderer,r.get_affiche_rep(1).c_str());
-                      
-
-
+                {
+                    img=IMG_LoadTexture(renderer,r.get_affiche_rep(0).c_str()); 
+                    d.deplace(perso, true);
+                    Pos=perso.get_PosPerso();
+                    SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); 
+                    } // faire fonction void resultat()
+                else{
+                    img=IMG_LoadTexture(renderer,r.get_affiche_rep(1).c_str());
+                    d.deplace(perso, false);
+                    Pos=perso.get_PosPerso();
+                    SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); 
+                }
+                s.update(r.estlaBonneRep("A",bonne_rep));
                 break;
+
                 case SDLK_b:
                 if (r.estlaBonneRep("B",bonne_rep))
-                { img=IMG_LoadTexture(renderer,r.get_affiche_rep(0).c_str());
-                d.deplace(perso, true);
-                 Pos=perso.get_PosPerso();
-                SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); } // faire fonction void resultat()
+                { 
+                    img=IMG_LoadTexture(renderer,r.get_affiche_rep(0).c_str());
+                    d.deplace(perso, true);
+                    Pos=perso.get_PosPerso();
+                    SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); } // faire fonction void resultat()
                 else {
                     img=IMG_LoadTexture(renderer,r.get_affiche_rep(1).c_str());
                     d.deplace(perso, false);
@@ -138,10 +150,23 @@ int main(int argc, char const *argv[])
                      SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); 
                     
                 }
+                s.update(r.estlaBonneRep("B",bonne_rep));
+
                 break;
                 case SDLK_c:
-                if (r.estlaBonneRep("C",bonne_rep)) img=IMG_LoadTexture(renderer,r.get_affiche_rep(0).c_str()); // faire fonction void resultat()
-                else img=IMG_LoadTexture(renderer,r.get_affiche_rep(1).c_str());
+                if (r.estlaBonneRep("C",bonne_rep))
+                {
+                    img=IMG_LoadTexture(renderer,r.get_affiche_rep(0).c_str()); 
+                    d.deplace(perso, true);
+                    Pos=perso.get_PosPerso();
+                    SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); } /// faire fonction void resultat()
+                else {
+                    img=IMG_LoadTexture(renderer,r.get_affiche_rep(1).c_str());
+                    d.deplace(perso, false);
+                    Pos=perso.get_PosPerso();
+                    SDL_QueryTexture(perso.get_img_perso(), NULL, NULL,&Pos.w, &Pos.h); 
+                    s.update(r.estlaBonneRep("C",bonne_rep));
+                }
 
                  break;
                 
@@ -150,8 +175,7 @@ int main(int argc, char const *argv[])
       
 
     }
-      
-		 SDL_RenderClear(renderer);
+		SDL_RenderClear(renderer);
         
         SDL_RenderCopy(renderer, img, NULL, &texr);
 
