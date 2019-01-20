@@ -12,7 +12,7 @@ Personnage::Personnage()
 
 //Personnage::Personnage(std :: string name){};
 Personnage :: ~Personnage()
-{SDL_DestroyTexture(_img_perso);};
+{ SDL_DestroyTexture(_img_perso);};
 
 
 void Personnage ::choisir_personnage(int i,SDL_Renderer * r)

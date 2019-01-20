@@ -4,7 +4,7 @@
 #include "Personnage.hh"
 
 
-/* La classe Deplacement permet de gérer les déplacements du pzrsonnage selon la véracité de ses réponses.
+/* La classe Deplacement permet de gérer les déplacements du personnage selon la véracité de ses réponses.
  Elle n'a pas d'attributs mais est liée à la classe Personnage avec ses fonction init et deplace.*/
 
 class Deplacement

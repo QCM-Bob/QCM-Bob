@@ -17,6 +17,5 @@ public:
 
 private:
 	int nb_score;
-	std::vector<std::string> affiche_score;
 	
 };

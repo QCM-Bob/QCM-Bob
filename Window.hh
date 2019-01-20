@@ -15,18 +15,6 @@
 class Window // donne le cadre de l'image
 {
     
-protected:
-    // La fenêtre à laquelle nous allons rendre
-    SDL_Window* _win;
-    // Le rendu de fenêtre pour les graphiques
-    SDL_Renderer* _renderer;
-    // La surface contenue par la fenêtre
-    SDL_Texture* _img;
-    
-    int _l; // longueur
-    int _h; // hauteur
-    const std::string _screen_name;
-    const std::string _PATH; //chemin pour l'image
     
 public:
     //constructeur 
@@ -46,6 +34,18 @@ public:
     int get_l(){return _l;}
     int get_h(){return _h;}
     
+    protected:
+    // La fenêtre à laquelle nous allons rendre
+    SDL_Window* _win;
+    // Le rendu de fenêtre pour les graphiques
+    SDL_Renderer* _renderer;
+    // La surface contenue par la fenêtre
+    SDL_Texture* _img;
+    
+    int _l; // longueur
+    int _h; // hauteur
+    const std::string _screen_name;
+    const std::string _PATH; //chemin pour l'image
     
 };
 
