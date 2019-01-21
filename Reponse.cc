@@ -29,12 +29,15 @@ void Reponse::init()
 };
 
 
+//Get reponse
 std::string Reponse::get_rep(Question q)
 {
 	int i=q.get_num_question();
 	return(get_liste(i));
 };
 
+
+//Verification si c'est la bonne reponse return TRUE , sinon  FALSE.
 bool Reponse::estlaBonneRep(std::string rep,std::string bonne_rep)
 {
     if (rep==bonne_rep) return true;
@@ -42,6 +45,7 @@ bool Reponse::estlaBonneRep(std::string rep,std::string bonne_rep)
 };
 
 
+//Cette fonction permet de verifier la reponse en fonction du personnage choisis. 
 void Reponse::operator()(int  val){
     
     if(val==1) perso_reponse="reponses1.txt";
