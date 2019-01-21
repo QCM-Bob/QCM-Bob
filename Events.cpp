@@ -17,7 +17,7 @@ using namespace std;
 #define WIDTH 1100
 #define HEIGHT 650
 
-
+/* Cette classe gère les evenement du jeux */
 void Events()
 {
 
