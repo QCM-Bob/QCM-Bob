@@ -35,6 +35,7 @@ void Question::init()
  };
 
 
+//Cette fonction permet de verifier quel personnage est choisi, et en fonction du personnage choisi ,on affiche les questions de ce dernier à partir du fichier .txt correspodant . 
 void Question::operator()(int  val){
     
     
