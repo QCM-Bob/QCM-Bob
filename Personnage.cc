@@ -1,6 +1,7 @@
 #include "Personnage.hh"
- #include <iostream>
+#include <iostream>
 
+//Les 3 personnages possible 
 Personnage::Personnage()
 {
 	_persos[0] = "./IMAGE/Move_Patrick.jpg";
