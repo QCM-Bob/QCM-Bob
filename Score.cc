@@ -10,11 +10,15 @@ Score::Score()
     
 };
 	
+	// fonction permet de verifier si la réponse est bonne,et ensuite on incrémente.
 void Score::update(bool estlaBonneRep)
 {
 	if(estlaBonneRep) nb_score++;
 };
 
+
+
+// On retourne le chemin vers l'image du score.
 std::string Score::get_affiche_score()
 {
     if (nb_score>=0 && nb_score <=4) return get_liste(0); 
